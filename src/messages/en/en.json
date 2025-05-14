@@ -1,0 +1,11 @@
+{
+  "Home": {
+    "title": "Our Products",
+    "viewDetails": "View Details"
+  },
+    "Product": {
+        "notFound": "Product not found.",
+        "backHome": "← Back to Home"
+    }
+
+}
