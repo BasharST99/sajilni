@@ -3,7 +3,6 @@ import type { AppProps } from "next/app"
 import { IntlProvider } from "next-intl"
 import { useRouter } from "next/router"
 import { useEffect } from "react"
-import LanguageToggle from "@/components/LanguageToggle"
 import Navbar from "@/components/Navbar"
 
 
