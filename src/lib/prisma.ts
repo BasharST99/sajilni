@@ -1,13 +1,21 @@
-import { PrismaClient } from '@prisma/client'
+import { PrismaClient } from '@prisma/client';
 
-const globalForPrisma = globalThis as unknown as {
-  prisma: PrismaClient | undefined
+let prisma: PrismaClient;
+
+declare global {
+  // Allow global var reuse in development
+  var prisma: PrismaClient | undefined;
 }
 
-export const prisma =
-  globalForPrisma.prisma ??
-  new PrismaClient({
-    log: ['error'],
-  })
+if (!global.prisma) {
+  try {
+    global.prisma = new PrismaClient();
+    console.log("✅ Prisma Client connected.");
+  } catch (error) {
+    console.error("❌ Prisma Client failed to connect:", error);
+  }
+}
 
-if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma
+prisma = global.prisma;
+
+export { prisma };
