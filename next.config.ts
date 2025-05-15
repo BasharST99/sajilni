@@ -1,3 +1,4 @@
+// next.config.ts
 import type { NextConfig } from "next"
 
 const nextConfig: NextConfig = {
@@ -8,6 +9,15 @@ const nextConfig: NextConfig = {
   i18n: {
     locales: ['en', 'ar'],
     defaultLocale: 'en',
+  },
+  webpack: (config, { isServer }) => {
+    if (isServer) {
+      config.externals.push('@prisma/client')
+    }
+    return config
+  },
+  experimental: {
+    serverComponentsExternalPackages: ['@prisma/client', 'mongodb']
   }
 }
 
