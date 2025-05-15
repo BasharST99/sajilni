@@ -1,19 +1,57 @@
-Dear Bushra,
+# Sajilni Product App - Technical Assessment
 
-I've completed the assessment and deployed it here:
-Live Demo: https://sajilni.vercel.app
+A Next.js application with Prisma (MongoDB) for product management, featuring internationalization (i18n) and RTL support.
 
-GitHub Repo: https://github.com/BasharST99/sajilni
-(Includes full README with setup details)
+## Features
 
-Key Points:
- Next.js + Prisma/MongoDB
- i18n (EN/AR) with RTL support
- Responsive Tailwind design
+- Product listing page
+- Product detail page
+- Localization (English/Arabic) with language switcher
+- RTL layout support for Arabic
+- Responsive design with Tailwind CSS
 
-**Database Connection String Used:**  
-`DATABASE_URL="mongodb+srv://sajilni:test123@cluster0.wizwxks.mongodb.net/sajilni?retryWrites=true&w=majority&appName=Cluster0"`
-The app is fully functional using the provided MongoDB connection.
+## Technologies Used
 
-Best regards,
-Bashar Telfah
+- Next.js 14
+- Prisma ORM
+- MongoDB
+- Tailwind CSS
+- Next.js i18n routing
+
+## Prerequisites
+
+- Node.js (v18 or later)
+- MongoDB Atlas account (or local MongoDB)
+- Git
+
+## Getting Started
+
+Follow these steps to set up the development environment:
+
+### 1. Clone the repository
+```bash
+git clone [https://github.com/BasharST99/sajilni]
+cd sajilni
+
+### 2. Install dependencies
+```bash
+npm install
+```
+
+### 3. Set up MongoDB
+- Create a MongoDB Atlas cluster or use a local MongoDB instance.
+- Create a `.env` file in the root directory and add your MongoDB connection string:
+```plaintext
+DATABASE_URL="mongodb+srv://<username>:<password>@cluster.mongodb.net/sajilni?retryWrites=true&w=majority"
+```
+
+### 4. Set up Prisma
+```bash
+npx prisma generate
+
+```
+
+### 5. Start the development server
+```bash
+npm run dev
+```
