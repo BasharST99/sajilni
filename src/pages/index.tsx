@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import ProductCard from '../components/ProductCard'
-import { GetStaticPropsContext } from "next"
+import { GetServerSidePropsContext } from "next"
 import { useTranslations } from "next-intl"
 
 import en from '../messages/en/en.json'
@@ -33,8 +33,7 @@ export default function HomePage() {
     </div>
   )
 }
-export async function getServerSideProps({ locale }: GetStaticPropsContext) {
-
+export async function getServerSideProps({ locale }: GetServerSidePropsContext) {
   return {
     props: {
       messages: locale === 'ar' ? ar : en
